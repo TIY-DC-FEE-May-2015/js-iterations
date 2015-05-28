@@ -6,7 +6,18 @@
   For instance, [ "a", "b", "c", "b" ] would produce { "a": 1, "b": 2, "c": 1 }
 */
 var frequency = function(array) {
-  
+// create an empty object
+  var obj = {}
+
+//loop through array 
+  for (i = 0; i < array.length; i++) {
+//send the array [i] to object
+    var itemName = array[i]
+    obj[itemName] = obj[itemName] || 0
+    obj[itemName] += 1
+  }
+
+  return obj
 }
 
 /*
@@ -17,8 +28,22 @@ var frequency = function(array) {
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
 var unique = function(array) {
-  
+  var obj = {}
+  var arr = []
+  for (var i = 0; i < array.length; i++) {
+    var itemName = array[i]
+    obj[itemName] = itemName
 }
+    
+    for (var itemName in obj) {
+     arr.push(obj[itemName])   
+    }
+return arr
+// Object.keys(itemName) - but don't know how to use it
+
+}
+
+
 
 /*
   This function should accept a number as a parameter.
