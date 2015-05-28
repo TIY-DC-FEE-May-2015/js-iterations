@@ -6,7 +6,16 @@
   For instance, [ "a", "b", "c", "b" ] would produce { "a": 1, "b": 2, "c": 1 }
 */
 var frequency = function(array) {
-  
+  var freqObj = {};
+
+  for (var i = 0; i < array.length; i++) {
+    if (freqObj[array[i]] >= 1) {
+      freqObj[array[i]] += 1;
+    } else {
+      freqObj[array[i]] = 1;
+    }
+  }
+  return freqObj;
 }
 
 /*
@@ -17,7 +26,16 @@ var frequency = function(array) {
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
 var unique = function(array) {
-  
+    var newArray = [];
+    var origLength = array.length;
+
+    for(var i = 0; i < origLength; i++) {
+      var testIfExists = newArray.indexOf(array[i]);
+      if (testIfExists === -1) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
 }
 
 /*
@@ -25,7 +43,7 @@ var unique = function(array) {
   It should return the value of the number times 3.
 */
 var tripler = function(number) {
-  
+  return number * 3;
 }
 
 /*
@@ -33,8 +51,11 @@ var tripler = function(number) {
   It should return the object with all of its *values* tripled.
 */
 var objectTripler = function(object) {
-  
-}
+    for (var prop in object) {
+      object[prop] = object[prop] * 3;
+    }
+    return object;
+  }
 
 /*
   This function should accept two objects as parameters.
@@ -45,6 +66,13 @@ var objectTripler = function(object) {
 */
 var extend = function(left, right) {
   
+  //test if object(left) has prop
+  for (var prop in right) {
+    if (left.hasOwnProperty(prop) === false) {
+      left[prop] = right[prop];
+    }
+  }
+  return left;
 }
 
 /*
@@ -55,5 +83,14 @@ var extend = function(left, right) {
   For instance, [{a: 1, b: 2}, {a: 3, c: 4}] for "a" would produce [1, 3]
 */
 var pluck = function(arrayOfObjects, string) {
+  var answer = [];
   
+  //loop through each object in the array
+  for (var i= 0; i < arrayOfObjects.length; i++) {
+    var currentObj = arrayOfObjects[i];
+    
+    answer.push(currentObj[string]);
+  }
+
+  return answer;
 }
