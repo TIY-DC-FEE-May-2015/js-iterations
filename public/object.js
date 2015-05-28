@@ -6,7 +6,15 @@
   For instance, [ "a", "b", "c", "b" ] would produce { "a": 1, "b": 2, "c": 1 }
 */
 var frequency = function(array) {
-  
+
+    var obj = {}
+
+    for(var i = 0; i < array.length; i++) {
+        var itemName = array[i]
+        obj[itemName] = obj[itemName] || 0
+        obj[itemName] += 1
+    }
+    return obj  
 }
 
 /*
@@ -17,7 +25,14 @@ var frequency = function(array) {
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
 var unique = function(array) {
+  var alone = {}
   
+  for (var i = 0; i < array.length; i++) {
+    var name = array[i]
+    alone[name] = name
+  }
+  
+  return Object.keys(alone) 
 }
 
 /*
@@ -25,7 +40,7 @@ var unique = function(array) {
   It should return the value of the number times 3.
 */
 var tripler = function(number) {
-  
+  return number * 3
 }
 
 /*
