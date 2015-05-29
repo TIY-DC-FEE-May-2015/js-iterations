@@ -7,6 +7,20 @@
 */
 var frequency = function(array) {
   
+  
+  var newFrequency={}
+
+  for(i=0; i<array.length;i++) {
+  
+    var item = array[i]
+    
+    newFrequency[item] = newFrequency[item] || 0
+    newFrequency[item] += 1
+
+        
+  }
+     return (newFrequency)
+  
 }
 
 /*
@@ -17,6 +31,13 @@ var frequency = function(array) {
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
 var unique = function(array) {
+
+  var letterCount = {}
+  for (var i = 0; i < array.length; i++) {
+    var letter = array[i]
+    letterCount[letter] = 1
+  }
+  return Object.keys(letterCount)
   
 }
 
@@ -25,6 +46,7 @@ var unique = function(array) {
   It should return the value of the number times 3.
 */
 var tripler = function(number) {
+  return number*3
   
 }
 
@@ -33,6 +55,11 @@ var tripler = function(number) {
   It should return the object with all of its *values* tripled.
 */
 var objectTripler = function(object) {
+  for(var letter in object){
+    object[letter] = object[letter] * 3
+  }
+
+return(object)
   
 }
 
@@ -44,7 +71,9 @@ var objectTripler = function(object) {
   For instance, ({ a: 1, b: 2 } and { b: 9, c: 3 }) would produce { a: 1, b: 2, c: 3 }
 */
 var extend = function(left, right) {
-  
+  for(var item in left){
+    left[]
+  } 
 }
 
 /*
