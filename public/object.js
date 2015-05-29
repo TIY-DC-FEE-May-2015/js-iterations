@@ -14,6 +14,7 @@ var frequency = function(array) {
         obj[itemName] = obj[itemName] || 0
         obj[itemName] += 1
     }
+
     return obj  
 }
 
@@ -48,7 +49,13 @@ var tripler = function(number) {
   It should return the object with all of its *values* tripled.
 */
 var objectTripler = function(object) {
-  
+
+  for (var i in object) {
+
+    object[i] = tripler(object[i])
+
+  }
+    return object
 }
 
 /*
@@ -59,7 +66,19 @@ var objectTripler = function(object) {
   For instance, ({ a: 1, b: 2 } and { b: 9, c: 3 }) would produce { a: 1, b: 2, c: 3 }
 */
 var extend = function(left, right) {
+
+  var both = {}
   
+  for (var numRight in right) {
+      both[numRight] = right[numRight]
+  }
+
+  for (var numLeft in left) {    
+      both[numLeft] = left[numLeft]
+  }
+  
+  return both
+
 }
 
 /*
@@ -71,4 +90,18 @@ var extend = function(left, right) {
 */
 var pluck = function(arrayOfObjects, string) {
   
+  var newArray = [ ]
+  for (var i = 0; i < arrayOfObjects.length; i++) {
+        
+      var object = arrayOfObjects[i]
+      for (var num in object) {
+            
+            arrayOfObjects[object] = object[num]
+
+        }
+        // Claudia showed me that using just the following line works w/o looping through object
+        newArray.push(arrayOfObjects[i][string])     
+    }
+    
+    return newArray
 }
