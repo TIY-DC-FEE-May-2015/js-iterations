@@ -71,9 +71,14 @@ return(object)
   For instance, ({ a: 1, b: 2 } and { b: 9, c: 3 }) would produce { a: 1, b: 2, c: 3 }
 */
 var extend = function(left, right) {
-  for(var item in left){
-    left[]
-  } 
+  var c = {};
+   for (var key in right) {
+      c[key] = right[key];
+   }
+   for (var key in left) {
+      c[key] = left[key];
+   }
+   return c
 }
 
 /*
@@ -84,5 +89,18 @@ var extend = function(left, right) {
   For instance, [{a: 1, b: 2}, {a: 3, c: 4}] for "a" would produce [1, 3]
 */
 var pluck = function(arrayOfObjects, string) {
-  
+   var produced=[]
+
+  for (var i=0; i< arrayOfObjects.length; i++){
+    produced.push(arrayOfObjects[i][string])
+    }
+  return (produced)
 }
+
+
+
+
+
+
+
+
