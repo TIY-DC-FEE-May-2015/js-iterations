@@ -3,7 +3,7 @@
   It should return the value of the number times 2.
 */
 var doubler = function(number) {
-  
+     return number * 2
 }
 
 /*
@@ -11,7 +11,10 @@ var doubler = function(number) {
   It should return an array, with each number in the array being doubled.
 */
 var arrayDoubler = function(array) {
-  
+  for(var i = 0; i < array.length; i++){
+     array[i] = doubler( array[i] )
+   }
+   return array
 }
 
 /*
@@ -19,7 +22,7 @@ var arrayDoubler = function(array) {
   It should return the first number, divided by the second number.
 */
 var divide = function(numerator, denominator) {
-
+    return numerator / denominator 
 }
 
 /*
@@ -27,7 +30,10 @@ var divide = function(numerator, denominator) {
   It should return an array, with each member of the array being divided by the parameter number.
 */
 var arrayDivide = function(array, denominator) {
-  
+  for(var i = 0; i < array.length; i++){
+     array[i] = divide( array[i], denominator )
+   }
+   return array
 }
 
 /*
@@ -35,7 +41,7 @@ var arrayDivide = function(array, denominator) {
   It should return the sum of the two numbers.
 */
 var sum = function(a, b) {
-  
+    return a + b 
 }
 
 /*
@@ -43,7 +49,11 @@ var sum = function(a, b) {
   It should return the sum of all the members in the array.
 */
 var arraySum = function(array) {
-  
+ var total = 0; 
+for(var i = 0; i < array.length;i++){
+     total = (array[i]) + total
+   }
+   return total
 }
 
 /*
@@ -51,7 +61,12 @@ var arraySum = function(array) {
   It should return the lower of the two numbers.
 */
 var minimum = function(a, b) {
-  
+  if(a < b){
+    return a 
+  }
+  else {
+    return b 
+  }
 }
 
 /*
@@ -60,7 +75,15 @@ var minimum = function(a, b) {
   If the array has a length = 0, it should return undefined.
 */
 var arrayMinimum = function(array) {
-  
+  array.sort()
+  var smallestValue = array[0];
+  for(var i = 0; i < array.length; i+= 1){
+    if (array[i] < smallestValue){
+      smallestValue = array[i];
+     
+    }
+    return smallestValue
+  }
 }
 
 /*
@@ -69,16 +92,23 @@ var arrayMinimum = function(array) {
   Otherwise, it should return false.
 */
 var endsInPeriod = function(string) {
-  
+  var astring = string;
+  var astring1 = astring.substring(astring.length-1)
+    if ( astring1 === "." ){
+    return true 
+  }
+  else {
+    return false 
+  }
 }
 
 /*
-  This functions hould accept an array of strings as a parameter.
+  This functions should accept an array of strings as a parameter.
   It should return an array, consisting of only the strings 
     from the original array which end with a period.
 */
 var arrayEndsInPeriod = function(array) {
-  
+ 
 }
 
 /*
@@ -87,7 +117,12 @@ var arrayEndsInPeriod = function(array) {
   Otherwise, it should return false.
 */
 var multiple3 = function(number) {
-  
+  if(number % 3 === 0){
+    return true 
+  }
+  else {
+    return false 
+  }
 }
 
 /*
@@ -96,7 +131,12 @@ var multiple3 = function(number) {
     from the original array which are multiples of 3.
 */
 var arrayMultiple3 = function(array) {
-  
+
+  for(var i = 0; i < array.length; i+= 1 ){
+    if( array[i] % 3 ===0){
+      return array[i] 
+    }
+  }
 }
 
 
