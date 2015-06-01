@@ -6,26 +6,39 @@
   For instance, [ "a", "b", "c", "b" ] would produce { "a": 1, "b": 2, "c": 1 }
 */
 var frequency = function(array) {
-  
+     var a = ["a", "b", "c", "d", "b", "c", "c"];
+             var lettercount = {}
+     for(var i = 0; i < array.length; i++) {
+            var letter = a[i]
+            lettercount[letter] = 1
+            return lettercount 
+  } 
 }
 
-/*
-  This function should accept an array as a parameter.
+/* This function should accept an array as a parameter.
   It should return an array that contains the unique values that showed up in the array.
   (Order of the values in the resulting array is not important.)
 
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
+
 var unique = function(array) {
-  
+var uniqueLetters = []
+   var lettercount = {}
+      for (var letter in lettercount) {
+          uniqueLetters.push(letter)
+  }
+    return lettercount
 }
+
 
 /*
   This function should accept a number as a parameter.
   It should return the value of the number times 3.
 */
 var tripler = function(number) {
-  
+  number = number * 3 
+  return number
 }
 
 /*
@@ -33,7 +46,13 @@ var tripler = function(number) {
   It should return the object with all of its *values* tripled.
 */
 var objectTripler = function(object) {
-  
+  var dognames ={barker: 4,
+                clair: 2,
+                maximus: 7,
+                yule 9,}
+  for (var i in dognames) {
+    Things[i]
+  };
 }
 
 /*
@@ -44,7 +63,6 @@ var objectTripler = function(object) {
   For instance, ({ a: 1, b: 2 } and { b: 9, c: 3 }) would produce { a: 1, b: 2, c: 3 }
 */
 var extend = function(left, right) {
-  
 }
 
 /*
