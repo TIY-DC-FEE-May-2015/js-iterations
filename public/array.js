@@ -108,6 +108,13 @@ var endsInPeriod = function(string) {
     from the original array which end with a period.
 */
 var arrayEndsInPeriod = function(array) {
+  var array1 = []
+  for(var i = 0; i < array.length; i++){
+    if (endsInPeriod(array[i]))
+      array1.push(array[i])
+  }
+
+  return array1
  
 }
 
@@ -131,12 +138,12 @@ var multiple3 = function(number) {
     from the original array which are multiples of 3.
 */
 var arrayMultiple3 = function(array) {
-
+ var array2 = []
   for(var i = 0; i < array.length; i+= 1 ){
-    if( array[i] % 3 ===0){
-      return array[i] 
-    }
+    if(multiple3(array[i]))
+      array2.push(array[i])
   }
+    return array2 
 }
 
 
