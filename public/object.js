@@ -5,8 +5,18 @@
 
   For instance, [ "a", "b", "c", "b" ] would produce { "a": 1, "b": 2, "c": 1 }
 */
+
 var frequency = function(array) {
-  
+  var lettercount = {}
+  for (var i = 0; i < array.length; i++) {
+    if(array[i] in lettercount){
+      lettercount[array[i]] += 1
+    }
+    else {
+      lettercount[array[i]] = 1
+    }
+  return lettercount;
+ 
 }
 
 /*
@@ -17,7 +27,18 @@ var frequency = function(array) {
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
 var unique = function(array) {
-  
+  var alphabet = []
+  for(var i = 0; i < array.length; i++){
+     var letter = false 
+  for(var o = 0; o < alphabet.length; o++){
+    if(array[i] === alphabet[o])
+      letter=true 
+  }
+    if(letter === false){
+   alphabet.push(array[i])
+   }
+  return alphabet
+}
 }
 
 /*
@@ -25,15 +46,19 @@ var unique = function(array) {
   It should return the value of the number times 3.
 */
 var tripler = function(number) {
-  
+     return number * 3
 }
 
 /*
   This function should accept an object as a parameter.
   It should return the object with all of its *values* tripled.
 */
+
 var objectTripler = function(object) {
-  
+     for(var i in object){
+     object[i] = tripler(object[i])
+     } 
+    return object
 }
 
 /*
@@ -44,7 +69,16 @@ var objectTripler = function(object) {
   For instance, ({ a: 1, b: 2 } and { b: 9, c: 3 }) would produce { a: 1, b: 2, c: 3 }
 */
 var extend = function(left, right) {
-  
+  var combine = {}
+
+  for(var i in left){
+    combine[i] = left[i]
+  }
+
+  for(var i in right){
+    combine[i] = right[i];
+  }
+  return combine
 }
 
 /*
@@ -55,5 +89,12 @@ var extend = function(left, right) {
   For instance, [{a: 1, b: 2}, {a: 3, c: 4}] for "a" would produce [1, 3]
 */
 var pluck = function(arrayOfObjects, string) {
+  var something = [];
+  for( var i=0; i <arrayOfObjects.length; i++){
+    var object = arrayOfObjects[i]
+
+    something.push(object[string])
+}
+return something
   
 }
